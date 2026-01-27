@@ -1,20 +1,27 @@
 #!/bin/bash
 # Post content to Poast
-# Usage: ./poast.sh <token> <content_json> [title] [visibility]
+# Usage: ./poast.sh <content_json> [title] [visibility]
+# Requires: POAST_TOKEN environment variable
 #
 # Examples:
-#   ./poast.sh "abc123" '[{"type":"text","data":"Hello!"}]'
-#   ./poast.sh "abc123" '[{"type":"code","data":"const x = 1","language":"javascript"}]' "Code Snippet" "public"
+#   ./poast.sh '[{"type":"text","data":"Hello!"}]'
+#   ./poast.sh '[{"type":"code","data":"const x = 1","language":"javascript"}]' "Code Snippet" "public"
 
 set -e
 
-TOKEN="$1"
-CONTENT="$2"
-TITLE="${3:-}"
-VISIBILITY="${4:-secret}"
+TOKEN="${POAST_TOKEN:-}"
+CONTENT="$1"
+TITLE="${2:-}"
+VISIBILITY="${3:-secret}"
 
-if [ -z "$TOKEN" ] || [ -z "$CONTENT" ]; then
-  echo "Usage: ./poast.sh <token> <content_json> [title] [visibility]"
+if [ -z "$TOKEN" ]; then
+  echo "Error: POAST_TOKEN environment variable not set"
+  echo "Get your token at https://www.poast.sh/api/auth/token"
+  exit 1
+fi
+
+if [ -z "$CONTENT" ]; then
+  echo "Usage: ./poast.sh <content_json> [title] [visibility]"
   exit 1
 fi
 

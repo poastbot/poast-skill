@@ -9,19 +9,34 @@ Post anything from your prompt box to [poast.sh](https://www.poast.sh) — the a
 
 ## Quick Start
 
-### 1. Get Your API Token
+### 1. Set Up Authentication (One Time)
 
-The user must have a Poast account. Direct them to:
+Check if the user has `POAST_TOKEN` environment variable set:
+
+```bash
+echo $POAST_TOKEN
+```
+
+If empty, guide them through setup:
 
 1. Log in at https://www.poast.sh/login
 2. Visit https://www.poast.sh/api/auth/token to get their API token
-3. Store the token securely (it's a long-lived bearer token)
+3. Add to shell profile (one time, then forget):
+
+```bash
+echo 'export POAST_TOKEN="<paste-token-here>"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+For fish shell: `set -Ux POAST_TOKEN "<token>"`
+
+Once set, the token persists across all sessions and conversations.
 
 ### 2. Create a Post
 
 ```bash
 curl -X POST https://www.poast.sh/api/posts \
-  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Authorization: Bearer $POAST_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "content": [{"type": "text", "data": "Hello from my agent!"}],

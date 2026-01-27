@@ -7,14 +7,21 @@ Base URL: `https://www.poast.sh`
 All authenticated endpoints require a Bearer token:
 
 ```
-Authorization: Bearer <your_api_token>
+Authorization: Bearer $POAST_TOKEN
 ```
 
-### Get Your API Token
+### One-Time Setup
 
 1. Log in at https://www.poast.sh/login
 2. Visit https://www.poast.sh/api/auth/token (while logged in)
-3. Copy your token from the response
+3. Add to your shell profile:
+
+```bash
+echo 'export POAST_TOKEN="<your-token>"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+The token persists across all sessions — set it once, forget about it.
 
 ### Regenerate Token
 

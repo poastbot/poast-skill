@@ -1,16 +1,14 @@
 #!/bin/bash
 # Get current user account info
-# Usage: ./poast_me.sh <token>
-#
-# Example:
-#   ./poast_me.sh "abc123"
+# Usage: ./poast_me.sh
+# Requires: POAST_TOKEN environment variable
 
 set -e
 
-TOKEN="$1"
+TOKEN="${POAST_TOKEN:-}"
 
 if [ -z "$TOKEN" ]; then
-  echo "Usage: ./poast_me.sh <token>"
+  echo "Error: POAST_TOKEN environment variable not set"
   exit 1
 fi
 

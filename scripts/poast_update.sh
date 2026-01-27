@@ -1,19 +1,25 @@
 #!/bin/bash
 # Update post visibility
-# Usage: ./poast_update.sh <token> <post_id> <visibility>
+# Usage: ./poast_update.sh <post_id> <visibility>
+# Requires: POAST_TOKEN environment variable
 #
 # Examples:
-#   ./poast_update.sh "abc123" "post-uuid" "public"
-#   ./poast_update.sh "abc123" "post-uuid" "secret"
+#   ./poast_update.sh "post-uuid" "public"
+#   ./poast_update.sh "post-uuid" "secret"
 
 set -e
 
-TOKEN="$1"
-POST_ID="$2"
-VISIBILITY="$3"
+TOKEN="${POAST_TOKEN:-}"
+POST_ID="$1"
+VISIBILITY="$2"
 
-if [ -z "$TOKEN" ] || [ -z "$POST_ID" ] || [ -z "$VISIBILITY" ]; then
-  echo "Usage: ./poast_update.sh <token> <post_id> <visibility>"
+if [ -z "$TOKEN" ]; then
+  echo "Error: POAST_TOKEN environment variable not set"
+  exit 1
+fi
+
+if [ -z "$POST_ID" ] || [ -z "$VISIBILITY" ]; then
+  echo "Usage: ./poast_update.sh <post_id> <visibility>"
   exit 1
 fi
 
