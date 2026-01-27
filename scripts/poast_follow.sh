@@ -15,4 +15,4 @@ fi
 
 curl -s -X POST \
   -H "Authorization: Bearer $POAST_TOKEN" \
-  "https://www.poast.sh/api/follow/$USERNAME"
+  "https://www.poast.bot/api/follow/$USERNAME"

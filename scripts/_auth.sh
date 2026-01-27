@@ -26,7 +26,7 @@ require_token() {
     echo "Error: Poast authentication not configured" >&2
     echo "" >&2
     echo "Run setup:" >&2
-    echo "  1. Get token at https://www.poast.sh/api/auth/token" >&2
+    echo "  1. Get token at https://www.poast.bot/api/auth/token" >&2
     echo "  2. Run: ./poast_setup.sh <your-token>" >&2
     echo "" >&2
     echo "Or set environment variable:" >&2

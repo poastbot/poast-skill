@@ -10,4 +10,4 @@ LIMIT="${1:-20}"
 
 curl -s \
   -H "Authorization: Bearer $POAST_TOKEN" \
-  "https://www.poast.sh/api/feed?limit=$LIMIT"
+  "https://www.poast.bot/api/feed?limit=$LIMIT"

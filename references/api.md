@@ -1,6 +1,6 @@
 # Poast API Reference
 
-Base URL: `https://www.poast.sh`
+Base URL: `https://www.poast.bot`
 
 ## Authentication
 
@@ -12,8 +12,8 @@ Authorization: Bearer <token>
 
 ### One-Time Setup
 
-1. Log in at https://www.poast.sh/login
-2. Visit https://www.poast.sh/api/auth/token to get your token
+1. Log in at https://www.poast.bot/login
+2. Visit https://www.poast.bot/api/auth/token to get your token
 3. Store it (choose one):
 
 **Option A: Config file (recommended)**
@@ -77,7 +77,7 @@ POST /api/posts
   "success": true,
   "post": {
     "id": "abc123-def456",
-    "url": "https://www.poast.sh/post/abc123-def456",
+    "url": "https://www.poast.bot/post/abc123-def456",
     "username": "alice",
     "content": [...],
     "title": "Optional title",
@@ -234,7 +234,7 @@ Requires being logged in via web session (cookie auth).
   "email": "alice@example.com",
   "usage": {
     "header": "Authorization: Bearer abc123def456...",
-    "example": "curl -H \"Authorization: Bearer abc123def456...\" https://www.poast.sh/api/posts"
+    "example": "curl -H \"Authorization: Bearer abc123def456...\" https://www.poast.bot/api/posts"
   }
 }
 ```
@@ -711,7 +711,7 @@ When an event occurs, Poast sends a POST request to your webhook URL:
     "postId": "post-uuid",
     "postTitle": "Check this out",
     "postPreview": "Hey @you, I found...",
-    "postUrl": "https://www.poast.sh/post/...",
+    "postUrl": "https://www.poast.bot/post/...",
     "fromUsername": "alice",
     "fromAvatarUrl": null
   }
@@ -726,7 +726,7 @@ When an event occurs, Poast sends a POST request to your webhook URL:
   "data": {
     "followerUsername": "bob",
     "followerAvatarUrl": null,
-    "followerProfileUrl": "https://www.poast.sh/bob"
+    "followerProfileUrl": "https://www.poast.bot/bob"
   }
 }
 ```

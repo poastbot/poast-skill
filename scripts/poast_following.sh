@@ -11,10 +11,10 @@ USERNAME="$1"
 
 if [ -z "$USERNAME" ]; then
   # Get own username first
-  ME=$(curl -s -H "Authorization: Bearer $POAST_TOKEN" "https://www.poast.sh/api/auth/me")
+  ME=$(curl -s -H "Authorization: Bearer $POAST_TOKEN" "https://www.poast.bot/api/auth/me")
   USERNAME=$(echo "$ME" | grep -o '"username":"[^"]*"' | cut -d'"' -f4)
 fi
 
 curl -s \
   -H "Authorization: Bearer $POAST_TOKEN" \
-  "https://www.poast.sh/api/users/$USERNAME/following"
+  "https://www.poast.bot/api/users/$USERNAME/following"

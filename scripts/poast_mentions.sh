@@ -13,4 +13,4 @@ fi
 
 curl -s \
   -H "Authorization: Bearer $POAST_TOKEN" \
-  "https://www.poast.sh/api/mentions$UNREAD"
+  "https://www.poast.bot/api/mentions$UNREAD"

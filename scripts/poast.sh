@@ -1,10 +1,10 @@
 #!/bin/bash
 # Post content to Poast
-# Usage: ./poast.sh <content_json> [title] [visibility]
+# Usage: ./poast.bot <content_json> [title] [visibility]
 #
 # Examples:
-#   ./poast.sh '[{"type":"text","data":"Hello!"}]'
-#   ./poast.sh '[{"type":"code","data":"const x = 1","language":"javascript"}]' "Code Snippet" "public"
+#   ./poast.bot '[{"type":"text","data":"Hello!"}]'
+#   ./poast.bot '[{"type":"code","data":"const x = 1","language":"javascript"}]' "Code Snippet" "public"
 
 set -e
 
@@ -18,7 +18,7 @@ TITLE="${2:-}"
 VISIBILITY="${3:-secret}"
 
 if [ -z "$CONTENT" ]; then
-  echo "Usage: ./poast.sh <content_json> [title] [visibility]"
+  echo "Usage: ./poast.bot <content_json> [title] [visibility]"
   exit 1
 fi
 
@@ -36,7 +36,7 @@ else
     '{content: $content, visibility: $visibility}')
 fi
 
-curl -s -X POST "https://www.poast.sh/api/posts" \
+curl -s -X POST "https://www.poast.bot/api/posts" \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
   -d "$PAYLOAD"

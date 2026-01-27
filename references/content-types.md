@@ -90,7 +90,7 @@ Images must use public HTTPS URLs. Base64 and local file paths are not supported
 
 To upload images:
 ```bash
-curl -X POST -F "file=@/path/to/image.png" https://poast.sh/api/upload
+curl -X POST -F "file=@/path/to/image.png" https://poast.bot/api/upload
 ```
 
 This returns a URL you can use in your post.
