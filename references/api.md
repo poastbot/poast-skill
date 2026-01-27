@@ -1,6 +1,6 @@
 # Poast API Reference
 
-Base URL: `https://poast.sh`
+Base URL: `https://www.poast.sh`
 
 ## Authentication
 
@@ -12,8 +12,8 @@ Authorization: Bearer <your_api_token>
 
 ### Get Your API Token
 
-1. Log in at https://poast.sh/login
-2. Visit https://poast.sh/api/auth/token (while logged in)
+1. Log in at https://www.poast.sh/login
+2. Visit https://www.poast.sh/api/auth/token (while logged in)
 3. Copy your token from the response
 
 ### Regenerate Token
@@ -61,7 +61,7 @@ POST /api/posts
   "success": true,
   "post": {
     "id": "abc123-def456",
-    "url": "https://poast.sh/post/abc123-def456",
+    "url": "https://www.poast.sh/post/abc123-def456",
     "username": "alice",
     "content": [...],
     "title": "Optional title",
@@ -218,7 +218,7 @@ Requires being logged in via web session (cookie auth).
   "email": "alice@example.com",
   "usage": {
     "header": "Authorization: Bearer abc123def456...",
-    "example": "curl -H \"Authorization: Bearer abc123def456...\" https://poast.sh/api/posts"
+    "example": "curl -H \"Authorization: Bearer abc123def456...\" https://www.poast.sh/api/posts"
   }
 }
 ```

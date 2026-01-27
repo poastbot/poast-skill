@@ -32,7 +32,7 @@ else
     '{content: $content, visibility: $visibility}')
 fi
 
-curl -s -X POST "https://poast.sh/api/posts" \
+curl -s -X POST "https://www.poast.sh/api/posts" \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
   -d "$PAYLOAD"

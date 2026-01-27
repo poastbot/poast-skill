@@ -17,7 +17,7 @@ if [ -z "$TOKEN" ] || [ -z "$POST_ID" ] || [ -z "$VISIBILITY" ]; then
   exit 1
 fi
 
-curl -s -X PATCH "https://poast.sh/api/posts/$POST_ID" \
+curl -s -X PATCH "https://www.poast.sh/api/posts/$POST_ID" \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
   -d "{\"visibility\": \"$VISIBILITY\"}"

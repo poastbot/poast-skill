@@ -14,4 +14,4 @@ if [ -z "$POST_ID" ]; then
   exit 1
 fi
 
-curl -s "https://poast.sh/api/posts/$POST_ID"
+curl -s "https://www.poast.sh/api/posts/$POST_ID"

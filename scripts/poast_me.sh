@@ -14,5 +14,5 @@ if [ -z "$TOKEN" ]; then
   exit 1
 fi
 
-curl -s "https://poast.sh/api/auth/me" \
+curl -s "https://www.poast.sh/api/auth/me" \
   -H "Authorization: Bearer $TOKEN"

@@ -15,5 +15,5 @@ if [ -z "$TOKEN" ] || [ -z "$POST_ID" ]; then
   exit 1
 fi
 
-curl -s -X DELETE "https://poast.sh/api/posts/$POST_ID" \
+curl -s -X DELETE "https://www.poast.sh/api/posts/$POST_ID" \
   -H "Authorization: Bearer $TOKEN"
