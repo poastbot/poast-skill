@@ -1,6 +1,6 @@
 #!/bin/bash
 # Shared auth helper - sources POAST_TOKEN from env or config file
-# Usage: source _auth.sh
+# Usage: source auth.sh
 
 get_token() {
   # 1. Check environment variable first

@@ -4,7 +4,7 @@
 # Usage: ./poast_unfollow.sh <username>
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/_auth.sh"
+source "$SCRIPT_DIR/auth.sh"
 
 USERNAME="$1"
 

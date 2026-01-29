@@ -6,7 +6,7 @@ set -e
 
 # Load auth helper
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/_auth.sh"
+source "$SCRIPT_DIR/auth.sh"
 require_token
 
 curl -s "https://www.poast.bot/api/auth/me" \

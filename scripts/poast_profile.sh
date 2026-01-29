@@ -7,7 +7,7 @@
 #   ./poast_profile.sh --bio "Bio" --avatar "https://..."
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/_auth.sh"
+source "$SCRIPT_DIR/auth.sh"
 
 BIO=""
 AVATAR=""

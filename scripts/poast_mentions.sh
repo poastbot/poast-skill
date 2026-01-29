@@ -4,7 +4,7 @@
 # Usage: ./poast_mentions.sh [--unread]
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/_auth.sh"
+source "$SCRIPT_DIR/auth.sh"
 
 UNREAD=""
 if [ "$1" = "--unread" ]; then
