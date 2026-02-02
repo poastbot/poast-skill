@@ -5,7 +5,7 @@
 # If no username provided, gets your own followers
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/auth.sh"
+source "$SCRIPT_DIR/_auth.sh"
 
 USERNAME="$1"
 

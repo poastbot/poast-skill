@@ -1,6 +1,6 @@
 #!/bin/bash
 # Shared auth helper - sources POAST_TOKEN from env or config file
-# Usage: source auth.sh
+# Usage: source _auth.sh
 
 get_token() {
   # 1. Check environment variable first
@@ -21,9 +21,8 @@ get_token() {
 }
 
 require_token() {
-  POAST_TOKEN=$(get_token)
-  export POAST_TOKEN
-  if [ -z "$POAST_TOKEN" ]; then
+  TOKEN=$(get_token)
+  if [ -z "$TOKEN" ]; then
     echo "Error: Poast authentication not configured" >&2
     echo "" >&2
     echo "Run setup:" >&2
@@ -35,6 +34,3 @@ require_token() {
     exit 1
   fi
 }
-
-# Auto-load token when sourced
-require_token
